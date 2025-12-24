@@ -61,7 +61,9 @@ export function NavUser() {
               </Avatar>
               <div className="grid flex-1 text-left text-sm leading-tight">
                 <span className="truncate font-medium">
-                  {session?.user.name}
+                  {session?.user.name && session.user.name.length > 0
+                    ? session.user.name
+                    : session?.user.email.charAt(0).toUpperCase()}
                 </span>
                 <span className="text-muted-foreground truncate text-xs">
                   {session?.user.email}
@@ -84,13 +86,15 @@ export function NavUser() {
                       session?.user.image ??
                       `https://avatar.vercel.sh/${session?.user.email}`
                     }
-                    alt={session?.user.name}
+                    alt={session?.user.name || "name"}
                   />
                   <AvatarFallback className="rounded-lg">CN</AvatarFallback>
                 </Avatar>
                 <div className="grid flex-1 text-left text-sm leading-tight">
                   <span className="truncate font-medium">
-                    {session?.user.name}
+                    {session?.user.name && session.user.name.length > 0
+                      ? session.user.name
+                      : session?.user.email.charAt(0).toUpperCase()}
                   </span>
                   <span className="text-muted-foreground truncate text-xs">
                     {session?.user.email}
@@ -107,7 +111,7 @@ export function NavUser() {
                 </Link>
               </DropdownMenuItem>
               <DropdownMenuItem asChild>
-                <Link href="/dashboard">
+                <Link href="/admin">
                   <IconCreditCard />
                   Dashboard
                 </Link>

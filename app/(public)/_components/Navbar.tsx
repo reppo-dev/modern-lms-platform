@@ -42,7 +42,11 @@ export function Navbar() {
               <UserDropDown
                 email={session.user.email}
                 image={session.user.image || ""}
-                name={session.user.name || ""}
+                name={
+                  session?.user.name && session.user.name.length > 0
+                    ? session.user.name
+                    : session?.user.email.charAt(0).toUpperCase()
+                }
               />
             ) : (
               <>

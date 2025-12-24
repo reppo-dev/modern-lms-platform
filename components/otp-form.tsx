@@ -45,7 +45,7 @@ export function OTPForm({ ...props }: React.ComponentProps<typeof Card>) {
         fetchOptions: {
           onSuccess: () => {
             toast.success("Email verified");
-            router.push("/home");
+            router.push("/");
           },
         },
       });
@@ -100,9 +100,6 @@ export function OTPForm({ ...props }: React.ComponentProps<typeof Card>) {
                 "Verify Account"
               )}
             </Button>
-            <FieldDescription className="text-center">
-              Didn&apos;t receive the code? <a href="#">Resend</a>
-            </FieldDescription>
           </FieldGroup>
         </form>
       </CardContent>

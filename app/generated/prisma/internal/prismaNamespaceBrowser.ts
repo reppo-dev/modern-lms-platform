@@ -52,9 +52,11 @@ export const AnyNull = runtime.AnyNull
 
 export const ModelName = {
   User: 'User',
+  Upload: 'Upload',
   Session: 'Session',
   Account: 'Account',
-  Verification: 'Verification'
+  Verification: 'Verification',
+  Course: 'Course'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -84,6 +86,20 @@ export const UserScalarFieldEnum = {
 } as const
 
 export type UserScalarFieldEnum = (typeof UserScalarFieldEnum)[keyof typeof UserScalarFieldEnum]
+
+
+export const UploadScalarFieldEnum = {
+  id: 'id',
+  key: 'key',
+  url: 'url',
+  name: 'name',
+  size: 'size',
+  type: 'type',
+  userId: 'userId',
+  createdAt: 'createdAt'
+} as const
+
+export type UploadScalarFieldEnum = (typeof UploadScalarFieldEnum)[keyof typeof UploadScalarFieldEnum]
 
 
 export const SessionScalarFieldEnum = {
@@ -129,6 +145,26 @@ export const VerificationScalarFieldEnum = {
 } as const
 
 export type VerificationScalarFieldEnum = (typeof VerificationScalarFieldEnum)[keyof typeof VerificationScalarFieldEnum]
+
+
+export const CourseScalarFieldEnum = {
+  id: 'id',
+  title: 'title',
+  desctiption: 'desctiption',
+  fileKey: 'fileKey',
+  price: 'price',
+  duration: 'duration',
+  level: 'level',
+  category: 'category',
+  smallDescription: 'smallDescription',
+  slug: 'slug',
+  status: 'status',
+  createdAt: 'createdAt',
+  updated: 'updated',
+  userId: 'userId'
+} as const
+
+export type CourseScalarFieldEnum = (typeof CourseScalarFieldEnum)[keyof typeof CourseScalarFieldEnum]
 
 
 export const SortOrder = {

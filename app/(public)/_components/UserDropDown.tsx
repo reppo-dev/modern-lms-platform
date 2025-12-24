@@ -16,9 +16,6 @@ import {
   LogOutIcon,
 } from "lucide-react";
 import Link from "next/link";
-import { authClient } from "@/lib/auth-client";
-import { toast } from "sonner";
-import { useRouter } from "next/navigation";
 import { useSignOut } from "@/hooks/use-signout";
 
 interface iAppProps {
@@ -59,7 +56,7 @@ export function UserDropDown({ name, email, image }: iAppProps) {
           </Link>
         </DropdownMenuItem>
         <DropdownMenuItem>
-          <Link href="/dashboard" className="flex flex-row space-x-4">
+          <Link href="/admin" className="flex flex-row space-x-4">
             <LayoutDashboardIcon
               size={16}
               className="opacity-60"

@@ -23,11 +23,31 @@ model User {
   updatedAt     DateTime
   sessions      Session[]
   accounts      Account[]
-  courses Course[]
+  courses       Course[]
+  uploads       Upload[]
 
   @@unique([email])
   @@map("user")
 }
+
+
+model Upload {
+  id        String   @id @default(uuid())
+  key       String   @unique
+  url       String
+  name      String
+  size      Int
+  type      String
+
+  userId    String
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  createdAt DateTime @default(now())
+
+  @@map("upload")
+  @@index([userId])
+}
+
 
 model Session {
   id        String   @id
