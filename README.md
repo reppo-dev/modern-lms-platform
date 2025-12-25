@@ -1,36 +1,76 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# ReppoLMS — Learning Management System (Next.js)
 
-## Getting Started
+ReppoLMS is a modern Learning Management System built with **Next.js (App Router)**, featuring a clean UI powered by **shadcn/ui**, secure authentication using **Better Auth**, database management with **Prisma ORM**, and image uploads via **UploadThing**.
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## ✨ Features
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- ✅ Modern Landing / Home Page
+- ✅ Authentication System
+  - Email & Password
+  - Email OTP (used automatically for both **login and signup**)
+  - GitHub OAuth
+- ✅ User Profile Menu after Login
+- ✅ Dashboard (UI-focused / early-stage)
+- ✅ Course Creation
+  - Course basic information
+  - Thumbnail image upload (UploadThing)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🧰 Tech Stack
 
-## Learn More
+- **Next.js** (App Router)
+- **TypeScript**
+- **Tailwind CSS**
+- **shadcn/ui**
+- **Better Auth**
+- **Prisma ORM**
+- **UploadThing** (image upload)
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 📸 Screenshots
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+> Screenshots are located in the `./public` directory.
 
-## Deploy on Vercel
+### Home Page
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+![Home Page](./public/Homepage.png)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### Login Page (Email + Password, Email OTP, GitHub)
+
+![Login Page](./public/Loginpage.png)
+
+### Email OTP Flow
+
+![Email OTP](./public/emailotp.png)
+
+### Sign Up (Email & Password)
+
+![Sign Up](./public/Signup.png)
+
+### Home Page (After Login – User Profile Visible)
+
+![Home When Login](./public/homeWhenLogin.png)
+
+### Dashboard
+
+![Dashboard](./public/dashboard.png)
+
+### Create Course
+
+![Create Course](./public/createcourses.png)
+![Create Course Details](./public/createcourses2.png)
+
+---
+
+## 🔐 Authentication Notes
+
+- Email OTP is handled **automatically** and used for both login and signup.
+- Users can authenticate using:
+  - Email & Password
+  - Email OTP
+  - GitHub OAuth
+- Authentication is implemented using **Better Auth**.
